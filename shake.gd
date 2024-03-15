@@ -20,6 +20,7 @@ func _ready():
 	
 
 func shake(intensity, duration, type = Type.Sine):
+	# BIG NOTE HERE, You may use three shake type (random sine and noise) and Sine is perferred in my project as it is rather smoother compared to others
 	# if player_no_want:
 	# 	intensity = 0
 	
@@ -30,7 +31,7 @@ func shake(intensity, duration, type = Type.Sine):
 
 
 func _process(delta):
-	# Get the camera
+	# Get the camera please use the corresponding camera path in your project. Note one might have multiple cameras in one project.
 	if get_tree().current_scene.scene_file_path != "res://mainmenu.tscn" && get_tree().current_scene.scene_file_path != "res://intro.tscn" && get_tree().current_scene.filename != "res://settingmenu.tscn":
 		var camera = get_tree().current_scene.get_node("Player/Camera2D")	
 		if camera_shake_duration <= 0:
